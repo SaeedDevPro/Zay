@@ -1,0 +1,20 @@
+// Start Categories
+.categories {
+    background-color: $bg-white;
+
+    .cards {
+        .card {
+            text-align: center;
+
+            .rounded-img {
+                @extend %img-rounded-full;
+
+                img {
+                    @extend %img-full;
+                }
+            }
+        }
+    }
+}
+
+// End Categories

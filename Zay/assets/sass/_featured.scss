@@ -1,0 +1,32 @@
+// Start Featured 
+.featured {
+    .container {
+        .cards {
+            .card {
+                background-color: $bg-white;
+                box-shadow: $box-shadow-card;
+
+                .box-img {
+                    img {
+                        @extend %img-full-gray;
+                    }
+                }
+
+                .info {
+                    padding: 1rem;
+                    line-height: 1.5;
+
+                    .rate {
+                        @extend%flex-center-between;
+
+                        .price {
+                            color: $bg-primary;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// End Featured

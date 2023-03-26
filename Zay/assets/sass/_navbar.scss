@@ -1,0 +1,61 @@
+// Start Navbar
+.navbar {
+    max-height: 85;
+    height: 85px;
+
+    .container {
+        @extend %flex-center-between;
+        background-color: $bg-white;
+
+        .btnNavbar {
+            color: $text-primary;
+            font-size: 1.8rem;
+            display: none
+        }
+
+        .menu {
+            @extend %flex-center-between;
+            column-gap: 3rem;
+        }
+    }
+}
+
+/* Medium */
+@media(max-width: 992px) {
+    .navbar {
+        position: relative;
+        z-index: 999;
+
+        .container {
+            @extend %flex-center-between;
+            position: relative;
+
+            .btnNavbar {
+                display: block;
+            }
+
+            .menu {
+                position: absolute;
+                display: block;
+                background-color: rgb(255, 255, 255);
+                top: -330px;
+                width: 100%;
+                left: 0;
+                right: 0;
+                z-index: -1;
+                padding: 25px;
+                transition: $transition;
+
+                li:not(:last-child) {
+                    padding: 20px 0;
+                }
+            }
+
+            ul.show {
+                top: 85px;
+            }
+        }
+    }
+}
+
+// End Navbar

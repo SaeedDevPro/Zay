@@ -1,0 +1,157 @@
+// Start Wrapper
+.wrapper {
+    .container {
+        @extend %flex-start-center;
+        column-gap: 3rem;
+
+        .sidebar {
+            flex-basis: 20%;
+            margin: 3rem 0;
+
+            .accrodion {
+                overflow: hidden;
+                margin: 1rem 0;
+                cursor: pointer;
+
+                .accrodion-heading {
+                    @extend %flex-center-between;
+
+                    h3 {
+                        color: $bg-dark;
+                        margin: 0;
+                    }
+                }
+
+                .accrodion-content {
+                    display: none;
+
+                    p {
+                        margin: 1rem 0;
+                    }
+                }
+            }
+
+            .active {
+                .accrodion-content {
+                    display: block;
+                }
+            }
+        }
+
+        .content {
+            flex: 1;
+            margin: 3rem 0;
+
+            .head {
+                @extend %flex-center-between;
+                column-gap: 3rem;
+                margin-bottom: 3rem;
+
+                ul {
+                    flex-basis: 40%;
+                    @extend %flex-center-start;
+                    column-gap: 2rem;
+
+                    li {
+                        a {
+                            color: $text-dark;
+                            transition: $transition-text;
+                            font-size: 1.3rem !important;
+
+                            &:hover {
+                                color: $text-primary;
+                            }
+                        }
+                    }
+                }
+
+                input {
+                    flex: 1;
+                    padding: 10px 15px;
+                    border: 1px solid $bg-primary;
+                    border-radius: 6px;
+                    outline: none;
+
+                    &::placeholder {
+                        color: $bg-dark;
+                    }
+                }
+            }
+
+            .cards {
+                display: grid;
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+                gap: 1rem;
+
+                .card {
+                    box-shadow: $box-shadow-card;
+                    background-color: $bg-white;
+
+                    .box-img {
+                        position: relative;
+
+                        img {
+                            @extend %img-full;
+                        }
+
+                        &::before {
+                            position: absolute;
+                            width: 100%;
+                            height: 100%;
+                            content: '';
+                            top: 0;
+                            left: 0;
+                            transition: $transition-bg;
+                            cursor: pointer;
+                        }
+
+                        &:hover {
+                            &::before {
+                                background-color: #00000054;
+                            }
+
+                            &::after {
+                                content: " \2b";
+                                font-family: "Font Awesome 6 Free";
+                                font-weight: 900;
+                                position: absolute;
+                                top: 50%;
+                                left: 50%;
+                                color: $text-white;
+                                font-size: 40px;
+                                z-index: 1;
+                                transform: translate(-50%, -50%);
+                                background-color: $bg-primary;
+                                padding: 10px;
+                                cursor: pointer;
+                            }
+                        }
+                    }
+
+                    .info {
+                        padding: 1rem;
+                        text-align: center;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width:992px) {
+    .wrapper {
+        .container {
+            flex-wrap: wrap;
+
+            .sidebar {
+                flex-basis: 100%;
+            }
+
+            .content {
+                flex-basis: 100%;
+            }
+        }
+    }
+}
+
+// End Wrapper

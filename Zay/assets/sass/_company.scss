@@ -1,0 +1,19 @@
+// Start Company
+.company {
+    .container {
+        .brands {
+            @extend %flex-center-center;
+            column-gap: 3rem;
+
+            .brand {
+                width: 80px;
+
+                img {
+                    @extend %img-full-gray;
+                }
+            }
+        }
+    }
+}
+
+// End Company

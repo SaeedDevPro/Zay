@@ -1,0 +1,81 @@
+// Start Carousel
+.carousel {
+    .container {
+        position: relative;
+
+        .slider-container {
+            overflow: hidden;
+            display: flex;
+
+            .slide {
+                column-gap: 3rem;
+                display: none;
+
+                .image-slide {
+                    flex-basis: 50%;
+                    width: 400px;
+                    order: 1;
+                }
+
+                .info-slide {
+                    flex-basis: 50%;
+                    line-height: 2;
+
+                    h3 {
+                        color: $text-dark;
+                        font-weight: normal;
+                    }
+                }
+            }
+
+            .active {
+                display: flex;
+                animation: slide 7s backwards;
+            }
+        }
+
+        .arrowChange {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 2rem;
+            color: $bg-primary;
+            cursor: pointer;
+        }
+
+        #left {
+            left: 0.5rem;
+        }
+
+        #right {
+            right: 0.5rem;
+        }
+    }
+}
+
+@media (max-width:992px) {
+    .carousel {
+        .container {
+            .slider-container {
+                .slide {
+                    row-gap: 3rem;
+                    flex-direction: column;
+
+                    .image-slide {
+                        order: 0;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@keyframes slide {
+    70% {
+        transform: translateX(-100%);
+        opacity: 0;
+        display: none;
+    }
+}
+
+// End Carousel

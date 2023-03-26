@@ -1,0 +1,39 @@
+// Start Services
+.services {
+    background-color: $bg-white;
+
+    .container {
+        .cards {
+            @extend %flex-center-center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+
+            .card {
+                text-align: center;
+                padding: 4rem;
+                background-color: $bg-dark;
+                @extend %flex-center-center;
+                flex-direction: column;
+                gap: 1.5rem;
+                cursor: pointer;
+                transition: $transition-bg;
+
+                p {
+                    color: $text-white !important;
+                    font-size: 1.3rem;
+                }
+
+                i {
+                    color: $text-white !important;
+                    font-size: 4rem;
+                }
+
+                &:hover {
+                    background-color: $bg-primary;
+                }
+            }
+        }
+    }
+}
+
+// End Services
